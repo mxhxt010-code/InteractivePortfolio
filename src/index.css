@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Bungee&family=Orbitron:wght@400..900&family=Pixelify+Sans:wght@400..700&family=Questrial&family=VT323&display=swap');
+@import 'tailwindcss';
+
+/* Figma-imported faces (resolved). Unresolved faces fall back to the Google families imported above. */
+/* Self-hosted originals for faces Figma could not resolve (declared under their own family names). */
+@font-face {
+  font-family: "Home Video";
+  src: url("/fonts/HomeVideo-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CHINTARON";
+  src: url("/fonts/CHINTARON-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Dela Gothic One:Regular";
+  src: url("https://static.figma.com/font/DelaGothicOne-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Sans:Regular";
+  src: url("https://static.figma.com/font/IBMPlexSans_wdth_wght__1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter:Bold";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter:Medium";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter:Regular";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter:Semi Bold";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Londrina Solid:Regular";
+  src: url("https://static.figma.com/font/LondrinaSolid-Regular_2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Love Ya Like A Sister:Regular";
+  src: url("https://static.figma.com/font/LoveYaLikeASister_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Margarine:Regular";
+  src: url("https://static.figma.com/font/Margarine-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans Devanagari:Regular";
+  src: url("https://static.figma.com/font/NotoSansDevanagari-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans Kannada:Regular";
+  src: url("https://static.figma.com/font/NotoSansKannadaUI-VF_2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display:Bold";
+  src: url("https://static.figma.com/font/PlayfairDisplay_wght__1") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display:Italic";
+  src: url("https://static.figma.com/font/PlayfairDisplay-Italic_wght__1") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display:Regular";
+  src: url("https://static.figma.com/font/PlayfairDisplay_wght__1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik Glitch:Regular";
+  src: url("https://static.figma.com/font/RubikGlitch-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sacramento:Regular";
+  src: url("https://static.figma.com/font/Sacramento-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk:Bold";
+  src: url("https://static.figma.com/font/SpaceGrotesk_wght__1") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    background: #f3ebdd;
+    overflow-x: hidden;
+  }
+  body {
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: #dfef00;
+    color: #000;
+  }
+  :focus-visible {
+    outline: 3px dashed #9b5af0;
+    outline-offset: 4px;
+  }
+}
+
+/* Section reveal */
+[data-section] .artboard {
+  opacity: 0;
+  translate: 0 24px;
+  transition: opacity 700ms ease, translate 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+[data-section][data-visible] .artboard {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Hero nav links */
+[data-nav-link] {
+  cursor: pointer;
+  transition: transform 180ms ease, color 180ms ease;
+}
+[data-nav-link]:hover {
+  transform: translateY(-4px) rotate(-3deg);
+  color: #7a1e2c;
+}
+
+[data-hover-pop] {
+  transition: scale 200ms ease, rotate 200ms ease;
+}
+[data-hover-pop]:hover {
+  scale: 1.12;
+  rotate: -8deg;
+}
+
+[data-underline-link] {
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+[data-underline-link]:hover {
+  color: #9b5af0;
+}
+
+/* Tool icons with labels */
+[data-tool] {
+  cursor: help;
+  transition: transform 180ms cubic-bezier(0.3, 1.6, 0.5, 1);
+  z-index: 1;
+}
+[data-tool]:hover,
+[data-tool]:focus-visible {
+  transform: scale(1.15);
+  z-index: 5;
+}
+[data-tool]::after {
+  content: attr(data-tool);
+  position: absolute;
+  left: calc(100% + 8px);
+  top: -10px;
+  translate: 0 4px;
+  padding: 4px 8px 5px;
+  background: rgba(16, 0, 16, 0.94);
+  border: 3px solid #2b0a5e;
+  outline: 2px solid rgba(16, 0, 16, 0.94);
+  color: #fff;
+  font-family: 'Home Video:Regular', 'Home Video', 'Pixelify Sans', monospace;
+  font-size: 16px;
+  text-shadow: 2px 2px 0 #3f3f3f;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms steps(2), translate 120ms steps(2);
+}
+[data-tool]:hover::after,
+[data-tool]:focus-visible::after {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* About — rotating stars */
+.about-stars {
+  animation: star-spin 36s linear infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes star-spin {
+  to { rotate: 360deg; }
+}
+
+/* Tools — Minecraft inventory */
+.inventory__slot {
+  border: 0;
+  background: transparent;
+  outline-offset: -3px;
+}
+.inventory__slot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  pointer-events: none;
+}
+.inventory__slot:hover::after,
+.inventory__slot:focus-visible::after {
+  opacity: 1;
+}
+.inventory__slot:focus-visible {
+  outline: 3px solid #fff;
+}
+.inventory__slot > div {
+  image-rendering: pixelated;
+  transition: translate 90ms steps(2);
+}
+.inventory__slot:active > div {
+  translate: 0 2px;
+}
+.mc-tooltip {
+  min-width: 190px;
+  padding: 6px 10px 8px;
+  background: rgba(16, 0, 16, 0.94);
+  border: 3px solid transparent;
+  border-image: linear-gradient(#5000ff, #28007f) 1;
+  outline: 3px solid rgba(16, 0, 16, 0.94);
+  font-family: 'Home Video:Regular', 'Home Video', 'Pixelify Sans', monospace;
+  font-size: 18px;
+  line-height: 1.35;
+  text-shadow: 2px 2px 0 #3f3f3f;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: mc-tip-in 120ms steps(3);
+}
+.mc-tooltip__lore {
+  color: #aaaaaa;
+  font-size: 15px;
+}
+.mc-tooltip__meta {
+  color: #5555ff;
+  font-size: 13px;
+}
+@keyframes mc-tip-in {
+  from { opacity: 0; translate: 0 4px; }
+}
+.inventory__hint {
+  font-family: 'Home Video:Regular', 'Home Video', 'Pixelify Sans', monospace;
+  font-size: 13px;
+  color: #3f3f3f;
+  letter-spacing: 0.04em;
+}
+
+/* End — coding screen that compiles into BYE */
+.bye-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 6px 8px;
+  background: #333333;
+  pointer-events: none;
+  transition: opacity 420ms steps(6);
+}
+.bye-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.18) 0 1px, transparent 1px 3px);
+  pointer-events: none;
+}
+.bye-screen[data-phase='done'] {
+  opacity: 0;
+}
+.bye-screen__code {
+  margin: 0;
+  text-align: left;
+  font-family: 'VT323', 'Consolas', ui-monospace, monospace;
+  font-size: 12.5px;
+  line-height: 13px;
+  color: #e8e8e8;
+  white-space: pre;
+  text-shadow: 0 0 4px rgba(183, 239, 0, 0.35);
+}
+.bye-screen__caret {
+  color: #b7ef00;
+  animation: caret-blink 900ms steps(1) infinite;
+}
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+.bye-pop {
+  transform-origin: 50% 100%;
+}
+.bye-pop[data-pop='out'] {
+  opacity: 0;
+  scale: 0.2;
+  translate: 0 30px;
+}
+.bye-pop[data-pop='in'] {
+  animation: bye-pop-in 700ms cubic-bezier(0.3, 1.7, 0.5, 1) 180ms both;
+}
+@keyframes bye-pop-in {
+  from { opacity: 0; scale: 0.2; translate: 0 30px; }
+  to { opacity: 1; scale: 1; translate: 0 0; }
+}
+
+/* Works */
+.work-slot {
+  transition: transform 260ms cubic-bezier(0.3, 1.4, 0.5, 1), box-shadow 260ms ease, filter 260ms ease;
+  z-index: 1;
+}
+.work-slot:hover,
+.work-slot:focus-visible {
+  transform: translateY(-14px) rotate(-3deg) scale(1.08);
+  box-shadow: 8px 10px 0 #000;
+  z-index: 10;
+}
+.work-slot__tag {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 14px);
+  translate: -50% -6px;
+  padding: 4px 10px;
+  border: 3px solid #000;
+  background: #fff;
+  font-family: 'Home Video:Regular', 'Home Video', 'Pixelify Sans', monospace;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, translate 180ms ease;
+}
+.work-slot:hover .work-slot__tag,
+.work-slot:focus-visible .work-slot__tag {
+  opacity: 1;
+  translate: -50% 0;
+}
+
+[data-bye] {
+  cursor: pointer;
+  transition: rotate 220ms ease, scale 220ms ease;
+}
+[data-bye]:hover {
+  rotate: -4deg;
+  scale: 1.04;
+}
+
+[data-contact] {
+  cursor: pointer;
+  transition: transform 160ms ease;
+}
+[data-contact]:hover {
+  transform: translateX(6px);
+}
+
+/* Floating nav */
+.floating-nav {
+  opacity: 0;
+  translate: 0 -120%;
+  pointer-events: none;
+  transition: opacity 220ms ease, translate 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  scrollbar-width: none;
+}
+.floating-nav.is-visible {
+  opacity: 1;
+  translate: 0 0;
+  pointer-events: auto;
+}
+
+/* Work viewer */
+.viewer {
+  animation: viewer-in 200ms ease;
+}
+.viewer__art {
+  animation: art-in 320ms cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+.pixel-btn {
+  cursor: pointer;
+  border: 3px solid #000;
+  background: #fff;
+  padding: 4px 12px;
+  box-shadow: 3px 3px 0 #000;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.pixel-btn:hover {
+  background: #dfef00;
+}
+.pixel-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 #000;
+}
+@keyframes viewer-in {
+  from { opacity: 0; }
+}
+@keyframes art-in {
+  from { opacity: 0; transform: scale(0.85) rotate(-4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  [data-section] .artboard { opacity: 1; translate: 0 0; }
+  .bye-pop[data-pop='out'] { opacity: 1; scale: 1; translate: 0 0; }
+}
